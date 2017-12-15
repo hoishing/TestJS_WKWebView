@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>        
+        function hideText() {
+            document.getElementById("demo").style.display = "none";
+        }
+    
+        function showText() {
+            document.getElementById("demo").style.display = "block";
+            window.webkit.messageHandlers.jsHandler.postMessage("trigger from JS");
+        }
+    </script>
+</head>
+<body>
+    <p id="demo">Hello World.</p>
+    <input type="button" onclick="showText()" value="Show Text and Trigger Handler">
+    <input type="button" onclick="hideText()" value="Hide Text">
+</body>
+</html>
